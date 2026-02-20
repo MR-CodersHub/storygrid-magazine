@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact StoryGrid Magazine - Get in Touch">
+  <title>Contact Us - StoryGrid Magazine</title>
+
+  <link rel="icon" href="assets/img/Story-grid.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="components.css">
+
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%);
+      color: var(--white);
+      padding: var(--spacing-3xl) 0;
+      text-align: center;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .contact-form-card {
+      background: var(--white);
+      padding: var(--spacing-2xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-info-card {
+      background: var(--white);
+      padding: var(--spacing-2xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-item {
+      display: flex;
+      gap: var(--spacing-md);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-md);
+      background-color: var(--off-white);
+      border-radius: var(--radius-md);
+      transition: var(--transition-base);
+    }
+
+    .contact-item:hover {
+      background-color: rgba(255, 107, 53, 0.1);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--charcoal);
+    }
+
+    .contact-details p {
+      color: var(--medium-gray);
+      font-size: 0.9375rem;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 400px;
+      background-color: var(--light-gray);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: var(--spacing-xl);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 992px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <!-- Brand (Left) -->
+      <a href="index.html" class="navbar-logo">
+        Story<span>Grid</span>
+      </a>
+
+      <!-- Nav Links (Center) -->
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="discover.html" class="navbar-link">Discover</a></li>
+        <li><a href="about.html" class="navbar-link">About</a></li>
+
+        <!-- Categories Dropdown -->
+        <li class="navbar-dropdown">
+          <a href="#" class="navbar-link">
+            Categories
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin-left: 4px;">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="category1.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              Technology
+            </a>
+            <a href="category2.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path
+                  d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6">
+                </path>
+                <line x1="2" y1="20" x2="2.01" y2="20"></line>
+              </svg>
+              Culture
+            </a>
+            <a href="category3.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              Business
+            </a>
+            <a href="category4.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              Travel
+            </a>
+            <a href="category5.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+              Health
+            </a>
+            <a href="category6.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+              Design
+            </a>
+            <a href="category7.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 1 0 2.83 0l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+              </svg>
+              Science
+            </a>
+          </div>
+        </li>
+
+        <li><a href="featured.html" class="navbar-link">Featured</a></li>
+        <li><a href="latest.html" class="navbar-link">Latest</a></li>
+        <li><a href="blog.html" class="navbar-link">Blog</a></li>
+        <li><a href="contact.html" class="navbar-link active">Contact</a></li>
+      </ul>
+
+      <!-- Profile Icon (Right) -->
+      <div class="navbar-profile-right">
+        <div class="profile-trigger">
+          <div class="profile-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="profile-dropdown">
+          <!-- Before Login -->
+          <a href="auth/user/login.html" class="dropdown-item auth-only">Login</a>
+          <a href="auth/user/signup.html" class="dropdown-item auth-only">Sign Up</a>
+          <!-- After Login (User) -->
+          <a href="user-dashboard.html" class="dropdown-item user-only" style="display: none;">Dashboard</a>
+          <!-- After Login (Admin) -->
+          <a href="admin-dashboard.html" class="dropdown-item admin-only" style="display: none;">Admin Dashboard</a>
+          <!-- Logout (Both) -->
+          <a href="#" class="dropdown-item logged-in-only" style="display: none;" onclick="handleLogout()">Logout</a>
+        </div>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="contact-hero">
+    <div class="container">
+      <span class="badge badge-orange">Contact Us</span>
+      <h1 style="margin-top: var(--spacing-md); color: var(--white);">Let's Start a Conversation</h1>
+      <p style="max-width: 700px; margin: var(--spacing-lg) auto 0; font-size: 1.125rem; opacity: 0.9;">
+        Have a question or want to work together? We'd love to hear from you.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <h2 style="margin-bottom: var(--spacing-lg);">Send Us a Message</h2>
+          <form id="contactForm" onsubmit="handleContactForm(event)">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="John Doe" required name="name">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="your@email.com" required name="email">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="How can we help?" required name="subject">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="6" placeholder="Tell us more about your project or inquiry..."
+                required name="message"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <div class="contact-info-card">
+            <h2 style="margin-bottom: var(--spacing-lg);">Get in Touch</h2>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                  </path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>hello@storygrid.com</p>
+                <p>support@storygrid.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <p>+1 (555) 123-4567</p>
+                <p>Mon-Fri, 9am-6pm EST</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Office</h4>
+                <p>123 Magazine Street</p>
+                <p>New York, NY 10001</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Social Media</h4>
+                <div style="display: flex; gap: var(--spacing-sm); margin-top: 0.5rem;">
+                  <a href="#" title="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                      </path>
+                    </svg>
+                  </a>
+                  <a href="#" title="Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                      </path>
+                    </svg>
+                  </a>
+                  <a href="#" title="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </a>
+                  <a href="#" title="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                      </path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge badge-orange">FAQ</span>
+        <h2 style="margin-top: var(--spacing-md);">Frequently Asked Questions</h2>
+      </div>
+
+      <div style="max-width: 800px; margin: var(--spacing-2xl) auto 0;">
+        <div class="card" style="margin-bottom: var(--spacing-md); padding: var(--spacing-lg);">
+          <h4 style="margin-bottom: var(--spacing-sm);">What services do you offer?</h4>
+          <p style="color: var(--medium-gray);">We offer editorial content creation, photography, design
+            services, advertising solutions, brand partnerships, and analytics. Visit our <a href="services.html"
+              style="color: var(--primary-orange);">services page</a> for more
+            details.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: var(--spacing-md); padding: var(--spacing-lg);">
+          <h4 style="margin-bottom: var(--spacing-sm);">How do I get started?</h4>
+          <p style="color: var(--medium-gray);">Simply fill out the contact form above or email us directly at
+            hello@storygrid.com. We'll schedule a discovery call to discuss your needs and how we can help.
+          </p>
+        </div>
+
+        <div class="card" style="margin-bottom: var(--spacing-md); padding: var(--spacing-lg);">
+          <h4 style="margin-bottom: var(--spacing-sm);">What are your pricing options?</h4>
+          <p style="color: var(--medium-gray);">We offer flexible pricing packages to suit different needs and
+            budgets. Check out our <a href="pricing.html" style="color: var(--primary-orange);">pricing
+              page</a> for detailed information.</p>
+        </div>
+
+        <div class="card" style="padding: var(--spacing-lg);">
+          <h4 style="margin-bottom: var(--spacing-sm);">Do you work with international clients?</h4>
+          <p style="color: var(--medium-gray);">Yes! We work with clients worldwide and have experience
+            managing projects across different time zones and markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="footer-logo">Story<span>Grid</span></h3>
+          <p class="footer-description">
+            Stories for the modern era. Curating the unseen and the meaningful.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="featured.html" class="footer-link">Featured</a></li>
+            <li><a href="latest.html" class="footer-link">Latest</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="category1.html" class="footer-link">Technology</a></li>
+            <li><a href="category2.html" class="footer-link">Culture</a></li>
+            <li><a href="category3.html" class="footer-link">Business</a></li>
+            <li><a href="category6.html" class="footer-link">Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="faq.html" class="footer-link">FAQ</a></li>
+            <li><a href="tos.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 DESIGNED BY MR CODERS HUB. ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

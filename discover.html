@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover StoryGrid Magazine - Curating trends, picks, and insights.">
+    <title>Discover | StoryGrid Magazine</title>
+    <link rel="icon" href="assets/img/Story-grid.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="discover.css">
+</head>
+
+<body class="discover-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Brand (Left) -->
+            <a href="index.html" class="navbar-logo">
+                Story<span>Grid</span>
+            </a>
+
+            <!-- Nav Links (Center) -->
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="discover.html" class="navbar-link active">Discover</a></li>
+                <li><a href="about.html" class="navbar-link">About</a></li>
+
+                <!-- Categories Dropdown -->
+                <li class="navbar-dropdown">
+                    <a href="#" class="navbar-link">
+                        Categories
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" style="margin-left: 4px;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="category1.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Technology
+                        </a>
+                        <a href="category2.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <path
+                                    d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6">
+                                </path>
+                                <line x1="2" y1="20" x2="2.01" y2="20"></line>
+                            </svg>
+                            Culture
+                        </a>
+                        <a href="category3.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            Business
+                        </a>
+                        <a href="category4.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            Travel
+                        </a>
+                        <a href="category5.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Health
+                        </a>
+                        <a href="category6.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.586 7.586"></path>
+                                <circle cx="11" cy="11" r="2"></circle>
+                            </svg>
+                            Design
+                        </a>
+                        <a href="category7.html" class="dropdown-menu-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="margin-right: 8px;">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                            Science
+                        </a>
+                    </div>
+                </li>
+
+                <li><a href="featured.html" class="navbar-link">Featured</a></li>
+                <li><a href="latest.html" class="navbar-link">Latest</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="contact.html" class="navbar-link">Contact</a></li>
+            </ul>
+
+            <!-- Profile Icon (Right) -->
+            <div class="navbar-profile-right">
+                <div class="profile-trigger">
+                    <div class="profile-avatar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div class="profile-dropdown">
+                    <a href="auth/user/login.html" class="dropdown-item auth-only">Login</a>
+                    <a href="auth/user/signup.html" class="dropdown-item auth-only">Sign Up</a>
+                    <a href="user-dashboard.html" class="dropdown-item user-only" style="display: none;">Dashboard</a>
+                    <a href="admin-dashboard.html" class="dropdown-item admin-only" style="display: none;">Admin
+                        Dashboard</a>
+                    <a href="#" class="dropdown-item logged-in-only" style="display: none;"
+                        onclick="handleLogout()">Logout</a>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="discover-hero">
+        <div class="discover-hero-content">
+            <span class="discover-hero-tag">Cover Story</span>
+            <h1 class="discover-hero-title">The Future is Quiet.</h1>
+            <p class="discover-hero-text">
+                In a world of constant noise, the next generation of designers, thinkers, and architects are embracing
+                silence as the ultimate luxury.
+            </p>
+            <div style="display: flex; gap: 20px;">
+                <a href="article1.html" class="btn btn-primary btn-lg"
+                    style="background-color: var(--secondary-accent); border: none;">Read Now</a>
+                <a href="about.html" class="btn btn-outline btn-lg"
+                    style="color: var(--primary-orange); border-color: var(--primary-orange);">Our Vision</a>
+            </div>
+        </div>
+        <div style="height: 100%; overflow: hidden;">
+            <!-- High quality editorial image -->
+            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1600&q=80"
+                alt="Minimalist interior" class="discover-hero-image">
+        </div>
+    </header>
+
+    <!-- About Section Teaser -->
+    <section class="section"
+        style="padding: 100px 0; background-color: #fff; border-bottom: 1px solid var(--discover-beige);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span
+                    style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--discover-red); font-size: 0.8rem;">Our
+                    Perspective</span>
+                <h2 style="margin-top: 20px; font-size: 2.5rem; color: var(--discover-midnight);">Curating the
+                    intersection of Design & Innovation</h2>
+                <p style="margin-top: 20px; font-size: 1.125rem; color: #666; line-height: 1.8;">
+                    Discover is our dedicated space for the stories that usually hide between the lines. We focus on the
+                    aesthetic shifts, technological breakthroughs, and cultural movements that are quietly rewriting our
+                    future.
+                </p>
+                <div style="margin-top: 40px;">
+                    <a href="about.html" class="btn btn-primary"
+                        style="background-color: var(--discover-midnight); border: none;">Read Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Stories (Grid) -->
+    <section class="trending-section">
+        <div class="container">
+            <div class="trending-header">
+                <h2 class="section-title">Trending Stories</h2>
+            </div>
+            <div class="trending-grid">
+                <!-- Card 1 -->
+                <a href="article1.html" class="trending-card">
+                    <span class="trending-number">01</span>
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600" class="trending-card-img"
+                        alt="AI">
+                    <span class="badge" style="background: var(--secondary-accent); color: white;">Tech</span>
+                    <h3>The Ethics of AI Art</h3>
+                </a>
+                <!-- Card 2 -->
+                <a href="article2.html" class="trending-card">
+                    <span class="trending-number">02</span>
+                    <img src="https://images.unsplash.com/photo-1542206395-9feb3edaa68d?w=600" class="trending-card-img"
+                        alt="Culture">
+                    <span class="badge" style="background: var(--primary-orange); color: white;">People</span>
+                    <h3>Coffee Culture Shift</h3>
+                </a>
+                <!-- Card 3 -->
+                <a href="article3.html" class="trending-card">
+                    <span class="trending-number">03</span>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600"
+                        class="trending-card-img" alt="Real Estate">
+                    <span class="badge" style="background: var(--secondary-accent); color: white;">Living</span>
+                    <h3>Urban Gardening 101</h3>
+                </a>
+                <!-- Card 4 (Updated to Story Card) -->
+                <a href="article1.html" class="trending-card">
+                    <span class="trending-number">04</span>
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
+                        class="trending-card-img" alt="Travel">
+                    <span class="badge" style="background: var(--primary-orange); color: white;">Travel</span>
+                    <h3>Hidden Gems of Asia</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editor's Picks (Masonry) -->
+    <section class="editors-picks">
+        <div class="container">
+            <div
+                style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px;">
+                <h2 class="section-title" style="color: white; margin: 0;">Editor's Selections</h2>
+                <a href="featured.html" style="color: white; border-bottom: 1px solid white; font-size: 0.9rem;">View
+                    All</a>
+            </div>
+
+            <div class="picks-grid">
+                <!-- Large Item (2x2) -->
+                <a href="article1.html" class="pick-item pick-large">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80"
+                        alt="High-End Professional Podcast Studio Setup">
+                    <div class="pick-overlay">
+                        <span class="badge" style="background: var(--primary-orange); color: white;">Must Read</span>
+                        <h3
+                            style="color: white; font-size: 2.2rem; margin-top: 10px; font-family: var(--font-heading);">
+                            The Golden Age of Podcasts</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;">How audio storytelling is reclaiming
+                            our attention spans.</p>
+                    </div>
+                </a>
+
+                <!-- Medium Item (2x1) -->
+                <a href="article2.html" class="pick-item pick-medium">
+                    <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?w=800&q=80"
+                        alt="Collaborative Futures">
+                    <div class="pick-overlay">
+                        <h4 style="color: white; font-size: 1.5rem; font-family: var(--font-heading);">Collaborative
+                            Futures</h4>
+                    </div>
+                </a>
+
+                <!-- Standard Item (1x1) -->
+                <a href="article3.html" class="pick-item">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80"
+                        alt="Design Icons">
+                    <div class="pick-overlay">
+                        <h5 style="color: white; font-size: 1.2rem;">Design Icons</h5>
+                    </div>
+                </a>
+
+                <!-- Standard Item (1x1) -->
+                <a href="category3.html" class="pick-item">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80"
+                        alt="Silicon Valleys">
+                    <div class="pick-overlay">
+                        <h5 style="color: white; font-size: 1.2rem;">Silicon Valleys</h5>
+                    </div>
+                </a>
+
+                <!-- Medium Item (2x1) -->
+                <a href="article2.html" class="pick-item pick-medium">
+                    <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=800&q=80"
+                        alt="Acoustic Retreats">
+                    <div class="pick-overlay">
+                        <h4 style="color: white; font-size: 1.5rem; font-family: var(--font-heading);">Acoustic Retreats
+                        </h4>
+                    </div>
+                </a>
+
+                <!-- Standard Item (1x1) -->
+                <a href="article1.html" class="pick-item">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80"
+                        alt="Modern Nomads">
+                    <div class="pick-overlay">
+                        <h5 style="color: white; font-size: 1.2rem;">Modern Nomads</h5>
+                    </div>
+                </a>
+
+                <!-- Standard Item (1x1) -->
+                <a href="article3.html" class="pick-item">
+                    <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&q=80"
+                        alt="Digital Zen">
+                    <div class="pick-overlay">
+                        <h5 style="color: white; font-size: 1.2rem;">Digital Zen</h5>
+                    </div>
+                </a>
+
+                <!-- Medium Item (2x1) - NEW ROW -->
+                <a href="article1.html" class="pick-item pick-medium">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+                        alt="Urban Canvas">
+                    <div class="pick-overlay">
+                        <h4 style="color: white; font-size: 1.5rem; font-family: var(--font-heading);">The Urban Canvas
+                        </h4>
+                    </div>
+                </a>
+
+                <!-- Standard Item (1x1) - NEW ROW -->
+                <a href="article2.html" class="pick-item">
+                    <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&q=80"
+                        alt="Analog Souls">
+                    <div class="pick-overlay">
+                        <h5 style="color: white; font-size: 1.2rem;">Analog Souls</h5>
+                    </div>
+                </a>
+
+                <!-- Standard Item (1x1) - NEW ROW -->
+                <a href="category2.html" class="pick-item">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95282fc3656b?w=800&q=80"
+                        alt="Cinematic Solar Towers and Green Energy Architecture">
+                    <div class="pick-overlay">
+                        <h5 style="color: white; font-size: 1.2rem;">Solar Citadels</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Highlights -->
+    <section class="category-highlights">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px;">Browse by Interest</h2>
+            <div class="cat-grid">
+                <a href="category1.html" class="cat-card">
+                    <div class="cat-icon">&#128187;</div>
+                    <h4>Technology</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Future tech, AI, Gadgets</p>
+                </a>
+                <a href="category2.html" class="cat-card">
+                    <div class="cat-icon">&#127912;</div>
+                    <h4>Culture</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Art, Society, Film</p>
+                </a>
+                <a href="category3.html" class="cat-card">
+                    <div class="cat-icon">&#128200;</div>
+                    <h4>Business</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Startups, Economy, Crypto</p>
+                </a>
+                <a href="category6.html" class="cat-card">
+                    <div class="cat-icon">&#9997;</div>
+                    <h4>Design</h4>
+                    <p style="font-size: 0.8rem; color: #666;">UX/UI, Architecture, Graphic</p>
+                </a>
+                <a href="category4.html" class="cat-card">
+                    <div class="cat-icon">&#127757;</div>
+                    <h4>Travel</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Culture, Hidden Gems, Stories</p>
+                </a>
+                <a href="category5.html" class="cat-card">
+                    <div class="cat-icon">&#127811;</div>
+                    <h4>Health</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Wellness, Science, Life</p>
+                </a>
+                <a href="category7.html" class="cat-card">
+                    <div class="cat-icon">&#128300;</div>
+                    <h4>Science</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Discovery, Research, Future</p>
+                </a>
+                <a href="blog.html" class="cat-card">
+                    <div class="cat-icon">&#128172;</div>
+                    <h4>Opinion</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Perspectives, Essays, Voices</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="discover-newsletter">
+        <div class="container">
+            <h2>Stay Ahead of the Curve</h2>
+            <p style="opacity: 0.8; max-width: 600px; margin: 20px auto;">
+                Join 50,000+ readers who get our weekly dispatch on design, technology, and culture.
+            </p>
+            <form class="news-form-modern" onsubmit="handleNewsletterForm(event)">
+                <input type="email" placeholder="Your email address" required name="email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Story<span>Grid</span></h3>
+                    <p class="footer-description">
+                        Stories for the modern era. Curating the unseen and the meaningful.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="featured.html" class="footer-link">Featured</a></li>
+                        <li><a href="latest.html" class="footer-link">Latest</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="category1.html" class="footer-link">Technology</a></li>
+                        <li><a href="category2.html" class="footer-link">Culture</a></li>
+                        <li><a href="category3.html" class="footer-link">Business</a></li>
+                        <li><a href="category6.html" class="footer-link">Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="tos.html" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 DESIGNED BY MR CODERS HUB. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

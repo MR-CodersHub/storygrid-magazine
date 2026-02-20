@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read full article on StoryGrid Magazine">
+  <title>Article Details - StoryGrid Magazine</title>
+
+  <link rel="icon" href="assets/img/Story-grid.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="components.css">
+
+  <style>
+    .article-header {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%);
+      color: var(--white);
+      padding: var(--spacing-3xl) 0;
+    }
+
+    .article-meta-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      flex-wrap: wrap;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: var(--spacing-2xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .article-content {
+      background: var(--white);
+      padding: var(--spacing-2xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .article-content img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .article-content h2 {
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-content p {
+      margin-bottom: var(--spacing-md);
+      line-height: 1.8;
+    }
+
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .sidebar-widget {
+      background: var(--white);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .sidebar-widget h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-sm);
+      border-bottom: 2px solid var(--primary-orange);
+    }
+
+    .recent-post {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-md);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .recent-post:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .recent-post-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+    }
+
+    .recent-post-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
+    }
+
+    .recent-post-date {
+      font-size: 0.8125rem;
+      color: var(--medium-gray);
+    }
+
+    .category-list {
+      list-style: none;
+    }
+
+    .category-list li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .category-list a {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+      color: var(--charcoal);
+      transition: var(--transition-base);
+      border-radius: var(--radius-sm);
+    }
+
+    .category-list a:hover {
+      background-color: var(--off-white);
+      color: var(--primary-orange);
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-xl);
+    }
+
+    .share-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--off-white);
+      color: var(--charcoal);
+      transition: var(--transition-base);
+    }
+
+    .share-btn:hover {
+      background-color: var(--primary-orange);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 992px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <!-- Brand (Left) -->
+      <a href="index.html" class="navbar-logo">
+        Story<span>Grid</span>
+      </a>
+
+      <!-- Nav Links (Center) -->
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="discover.html" class="navbar-link">Discover</a></li>
+        <li><a href="about.html" class="navbar-link">About</a></li>
+
+        <!-- Categories Dropdown -->
+        <li class="navbar-dropdown">
+          <a href="#" class="navbar-link">
+            Categories
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin-left: 4px;">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="category1.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              Technology
+            </a>
+            <a href="category2.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path
+                  d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6">
+                </path>
+                <line x1="2" y1="20" x2="2.01" y2="20"></line>
+              </svg>
+              Culture
+            </a>
+            <a href="category3.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              Business
+            </a>
+            <a href="category4.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              Travel
+            </a>
+            <a href="category5.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+              Health
+            </a>
+            <a href="category6.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+              Design
+            </a>
+            <a href="category7.html" class="dropdown-menu-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="margin-right: 8px;">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+              </svg>
+              Science
+            </a>
+          </div>
+        </li>
+
+        <li><a href="featured.html" class="navbar-link">Featured</a></li>
+        <li><a href="latest.html" class="navbar-link">Latest</a></li>
+        <li><a href="blog.html" class="navbar-link active">Blog</a></li>
+        <li><a href="contact.html" class="navbar-link">Contact</a></li>
+      </ul>
+
+      <!-- Profile Icon (Right) -->
+      <div class="navbar-profile-right">
+        <div class="profile-trigger">
+          <div class="profile-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="profile-dropdown">
+          <!-- Before Login -->
+          <a href="auth/user/login.html" class="dropdown-item auth-only">Login</a>
+          <a href="auth/user/signup.html" class="dropdown-item auth-only">Sign Up</a>
+          <!-- After Login (User) -->
+          <a href="user-dashboard.html" class="dropdown-item user-only" style="display: none;">Dashboard</a>
+          <!-- After Login (Admin) -->
+          <a href="admin-dashboard.html" class="dropdown-item admin-only" style="display: none;">Admin Dashboard</a>
+          <!-- Logout (Both) -->
+          <a href="#" class="dropdown-item logged-in-only" style="display: none;" onclick="handleLogout()">Logout</a>
+        </div>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.7);">
+        <div class="breadcrumb-item"><a href="home-1.html" style="color: rgba(255,255,255,0.7);">Home</a></div>
+        <div class="breadcrumb-item"><a href="blog.html" style="color: rgba(255,255,255,0.7);">Blog</a></div>
+        <div class="breadcrumb-item active" style="color: var(--white);">Article</div>
+      </div>
+
+      <div class="article-meta-header">
+        <span class="badge badge-orange" id="articleCategory">Design</span>
+        <span style="opacity: 0.8;" id="articleDate">Jan 28, 2026</span>
+        <span style="opacity: 0.8;">&bull;</span>
+        <span style="opacity: 0.8;">5 min read</span>
+      </div>
+
+      <h1 style="color: var(--white); max-width: 800px;" id="articleTitle">The Art of Minimalist Design</h1>
+
+      <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-top: var(--spacing-lg);">
+        <div
+          style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-orange); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700;">
+          JD
+        </div>
+        <div>
+          <div style="font-weight: 600;" id="articleAuthor">John Doe</div>
+          <div style="font-size: 0.875rem; opacity: 0.8;">Senior Editor</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <section class="section">
+    <div class="container">
+      <div class="article-layout">
+        <!-- Main Content -->
+        <article class="article-content" id="articleContent">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200" alt="Article Image">
+
+          <p class="lead-text" style="font-size: 1.125rem; font-weight: 500; color: var(--charcoal);">
+            Exploring the principles of minimalism in modern web design and how it enhances user experience
+            through intentional simplicity and focused content delivery.
+          </p>
+
+          <p>
+            Minimalist design has become more than just a trend&mdash;it's a philosophy that shapes how we create
+            digital experiences. At its core, minimalism is about removing the unnecessary to highlight what
+            truly matters. In web design, this translates to cleaner interfaces, faster load times, and more
+            intuitive user journeys.
+          </p>
+
+          <h2>The Principles of Minimalist Design</h2>
+
+          <p>
+            The foundation of minimalist design rests on several key principles. First and foremost is the
+            concept of "less is more"&mdash;every element on the page should serve a purpose. This doesn't mean
+            stripping away all decoration, but rather being intentional about what stays and what goes.
+          </p>
+
+          <p>
+            White space, or negative space, plays a crucial role in minimalist design. It's not empty
+            space&mdash;it's breathing room that allows content to shine. Proper use of white space improves
+            readability, draws attention to important elements, and creates a sense of elegance and
+            sophistication.
+          </p>
+
+          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200" alt="Minimalist workspace">
+
+          <h2>Typography in Minimalist Design</h2>
+
+          <p>
+            Typography becomes even more critical in minimalist designs. With fewer visual elements
+            competing for attention, your choice of fonts, sizes, and spacing can make or break the design.
+            Clean, readable typefaces with clear hierarchy guide users through content effortlessly.
+          </p>
+
+          <p>
+            Consider using a limited color palette&mdash;often just two or three colors&mdash;to maintain visual
+            coherence. This constraint forces designers to be creative and intentional with their choices,
+            resulting in more cohesive and memorable designs.
+          </p>
+
+          <h2>The Impact on User Experience</h2>
+
+          <p>
+            Minimalist design directly impacts user experience in several ways. Pages load faster with fewer
+            elements, navigation becomes clearer when options are limited and well-organized, and users can
+            focus on content without distractions.
+          </p>
+
+          <p>
+            However, minimalism doesn't mean sacrificing functionality. The challenge lies in maintaining
+            all necessary features while presenting them in the simplest possible way. This requires deep
+            understanding of user needs and careful consideration of every design decision.
+          </p>
+
+          <div class="share-buttons">
+            <a href="#" class="share-btn" title="Share on Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="share-btn" title="Share on Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="share-btn" title="Share on LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" class="share-btn" title="Copy Link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <!-- Recent Posts -->
+          <div class="sidebar-widget">
+            <h3>Recent Posts</h3>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=200" alt="Post"
+                class="recent-post-img">
+              <div>
+                <a href="blog-details.html?id=2" class="recent-post-title">Typography Trends for
+                  2026</a>
+                <div class="recent-post-date">Jan 25, 2026</div>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=200" alt="Post"
+                class="recent-post-img">
+              <div>
+                <a href="blog-details.html?id=3" class="recent-post-title">Color Psychology in
+                  Branding</a>
+                <div class="recent-post-date">Jan 22, 2026</div>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200" alt="Post"
+                class="recent-post-img">
+              <div>
+                <a href="blog-details.html?id=4" class="recent-post-title">Responsive Design Best
+                  Practices</a>
+                <div class="recent-post-date">Jan 20, 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="sidebar-widget">
+            <h3>Categories</h3>
+            <ul class="category-list">
+              <li><a href="blog.html">Design <span>(12)</span></a></li>
+              <li><a href="blog.html">Typography <span>(8)</span></a></li>
+              <li><a href="blog.html">Branding <span>(15)</span></a></li>
+              <li><a href="blog.html">Development <span>(10)</span></a></li>
+              <li><a href="blog.html">Accessibility <span>(6)</span></a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="sidebar-widget" style="background-color: var(--primary-orange); color: var(--white);">
+            <h3 style="color: var(--white); border-bottom-color: rgba(255,255,255,0.3);">Newsletter</h3>
+            <p style="font-size: 0.9375rem; margin-bottom: var(--spacing-md); color: rgba(255,255,255,0.9);">
+              Subscribe to get the latest articles delivered to your inbox.
+            </p>
+            <form onsubmit="handleNewsletterForm(event)">
+              <input type="email" class="form-control" placeholder="Your email" required
+                style="margin-bottom: var(--spacing-sm);">
+              <button type="submit" class="btn btn-dark" style="width: 100%;">Subscribe</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: var(--spacing-2xl);">Related Articles</h2>
+      <div class="grid-3">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800" alt="Article" class="card-img">
+          <div class="card-body">
+            <span class="badge badge-orange">Typography</span>
+            <h3 class="card-title">Typography Trends for 2026</h3>
+            <p class="card-text">Discover the latest typography trends shaping digital design.</p>
+            <a href="blog-details.html?id=2" class="btn btn-outline btn-sm">Read More</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800" alt="Article" class="card-img">
+          <div class="card-body">
+            <span class="badge badge-orange">Branding</span>
+            <h3 class="card-title">Color Psychology in Branding</h3>
+            <p class="card-text">Understanding how colors influence consumer behavior.</p>
+            <a href="blog-details.html?id=3" class="btn btn-outline btn-sm">Read More</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" alt="Article" class="card-img">
+          <div class="card-body">
+            <span class="badge badge-orange">Development</span>
+            <h3 class="card-title">Responsive Design Best Practices</h3>
+            <p class="card-text">Essential techniques for creating responsive websites.</p>
+            <a href="blog-details.html?id=4" class="btn btn-outline btn-sm">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="footer-logo">Story<span>Grid</span></h3>
+          <p class="footer-description">
+            Stories for the modern era. Curating the unseen and the meaningful.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="featured.html" class="footer-link">Featured</a></li>
+            <li><a href="latest.html" class="footer-link">Latest</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="category1.html" class="footer-link">Technology</a></li>
+            <li><a href="category2.html" class="footer-link">Culture</a></li>
+            <li><a href="category3.html" class="footer-link">Business</a></li>
+            <li><a href="category6.html" class="footer-link">Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="faq.html" class="footer-link">FAQ</a></li>
+            <li><a href="tos.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 DESIGNED BY MR CODERS HUB. ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script>
+    // Load article from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = urlParams.get('id');
+
+    if (articleId) {
+      const article = Blog.getById(parseInt(articleId));
+      if (article) {
+        document.getElementById('articleTitle').textContent = article.title;
+        document.getElementById('articleCategory').textContent = article.category;
+        document.getElementById('articleDate').textContent = formatDate(article.date);
+        document.getElementById('articleAuthor').textContent = article.author;
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to StoryGrid Magazine">
+    <title>Login - StoryGrid Magazine</title>
+    <link rel="icon" href="../../assets/img/Story-grid.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../theme.css">
+    <link rel="stylesheet" href="../../components.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-lg);
+        }
+
+        .auth-container {
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .auth-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: var(--spacing-2xl);
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .auth-logo a {
+            text-decoration: none;
+        }
+
+        .auth-logo h1 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--charcoal);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .auth-logo h1 span {
+            color: var(--primary-orange);
+        }
+
+        .auth-logo p {
+            color: var(--medium-gray);
+            font-size: 0.9375rem;
+        }
+
+        .auth-form {
+            margin-top: var(--spacing-xl);
+        }
+
+        .form-control.error {
+            border-color: #dc3545;
+        }
+
+        .divider {
+            text-align: center;
+            margin: var(--spacing-lg) 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--light-gray);
+        }
+
+        .divider span {
+            background-color: var(--white);
+            padding: 0 var(--spacing-md);
+            position: relative;
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            font-size: 0.9375rem;
+            color: var(--medium-gray);
+        }
+
+        .auth-footer a {
+            color: var(--primary-orange);
+            font-weight: 600;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Password Toggle Styles */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--medium-gray);
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: var(--primary-orange);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+
+        <div class="auth-card">
+            <div class="auth-logo">
+                <a href="../../index.html">
+                    <h1>Story<span>Grid</span></h1>
+                </a>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+
+            <form class="auth-form" id="loginForm" onsubmit="event.preventDefault(); handleLogin(event);">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="your@email.com" required name="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="passwordInput" class="form-control" placeholder="Enter your password"
+                            required name="password" style="padding-right: 45px;">
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility()"
+                            title="Toggle password visibility">
+                            <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg id="eyeOffIcon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="display: none;">
+                                <path
+                                    d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24">
+                                </path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" name="remember">
+                        <span style="font-size: 0.9375rem; color: var(--medium-gray);">Remember me</span>
+                    </label>
+                    <a href="forgot-password.html" style="font-size: 0.9375rem; color: var(--primary-orange);">Forgot
+                        Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md);">
+                    Login
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Don't have an account? <a href="signup.html">Sign up</a>
+            </div>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div style="text-align: center; font-size: 0.875rem; color: var(--medium-gray);">
+                <p>Demo Credentials:</p>
+                <p><strong>Admin:</strong> admin@gmail.com / admin123</p>
+                <p><strong>User:</strong> Create a new account</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/app.js"></script>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+            const eyeOffIcon = document.getElementById('eyeOffIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.style.display = 'none';
+                eyeOffIcon.style.display = 'block';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.style.display = 'block';
+                eyeOffIcon.style.display = 'none';
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+
+            if (!validateForm('loginForm')) {
+                return;
+            }
+
+            const formData = new FormData(event.target);
+            const email = formData.get('email');
+            const password = formData.get('password');
+
+            const result = Auth.login(email, password);
+
+            if (result.success) {
+                showToast('Success', 'Login successful!', 'success');
+
+                // Redirect based on role
+                setTimeout(() => {
+                    if (result.user.role === 'admin') {
+                        window.location.href = '../../dashboards/admin-dashboard.html';
+                    } else {
+                        window.location.href = '../../dashboards/user-dashboard.html';
+                    }
+                }, 1000);
+            } else {
+                showToast('Error', result.message, 'error');
+            }
+        }
+    </script>
+</body>
+
+</html>

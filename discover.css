@@ -1,0 +1,395 @@
+/* ================================
+   DISCOVER PAGE - MODERN EDITORIAL STYLE
+   Design Reference: clean, grid-based, high contrast
+================================ */
+
+/* Local variables for Discover-specific sections only */
+:root {
+    --discover-midnight: #2c3e50;
+    --discover-red: #e74c3c;
+    --discover-beige: #fcefe9;
+}
+
+body.discover-page {
+    background-color: var(--discover-beige);
+}
+
+/* Navbar overrides for Discover page - Keeping it clean but integrated */
+.discover-page .navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary-orange);
+    /* Keep the original orange theme for navigation consistency */
+}
+
+/* ================================
+   HERO SECTION - SPLIT LAYOUT
+================================ */
+.discover-hero {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.discover-hero-content {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.discover-hero-tag {
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--discover-red);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discover-hero-tag::before {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: var(--discover-red);
+}
+
+.discover-hero-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: var(--spacing-lg);
+    color: var(--discover-midnight);
+}
+
+.discover-hero-text {
+    font-size: 1.25rem;
+    color: var(--medium-gray);
+    margin-bottom: var(--spacing-xl);
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.discover-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    display: block;
+}
+
+/* ================================
+   TRENDING STORIES - GRID LAYOUT
+================================ */
+.trending-section {
+    padding: var(--spacing-3xl) 0;
+    background: #fff;
+}
+
+.trending-header {
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trending-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--discover-red);
+    margin: var(--spacing-sm) auto 0;
+}
+
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.trending-card {
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: transparent;
+}
+
+.trending-card:hover {
+    transform: translateY(-8px);
+}
+
+.trending-card:hover .trending-card-img {
+    box-shadow: var(--shadow-lg);
+}
+
+.trending-number {
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-size: 5rem;
+    font-family: var(--font-heading);
+    color: rgba(44, 62, 80, 0.1);
+    font-weight: 900;
+    z-index: 1;
+}
+
+.trending-card-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-sm);
+}
+
+.trending-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* ================================
+   EDITOR'S PICKS - MASONRY GRID
+================================ */
+.editors-picks {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--discover-midnight);
+    color: white;
+}
+
+.picks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 300px);
+    gap: var(--spacing-md);
+}
+
+.pick-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    border-radius: var(--radius-md);
+    background-color: var(--charcoal);
+}
+
+.pick-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.pick-item:hover img {
+    transform: scale(1.1);
+}
+
+.pick-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    transform: translateY(10px);
+    transition: var(--transition-base);
+}
+
+.pick-item:hover .pick-overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+}
+
+.pick-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.pick-medium {
+    grid-column: span 2;
+}
+
+/* ================================
+   CATEGORY HIGHLIGHTS - MINIMALIST
+================================ */
+.category-highlights {
+    padding: var(--spacing-3xl) 0;
+    background-color: #f8f9fa;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cat-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    border: 1px solid #ddd;
+    background: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.cat-card:hover {
+    border-color: var(--discover-red);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cat-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--discover-midnight);
+}
+
+/* ================================
+   NEWSLETTER - BOLD
+================================ */
+.discover-newsletter {
+    background-color: var(--discover-red);
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    color: white;
+}
+
+.news-form-modern {
+    display: flex;
+    max-width: 500px;
+    margin: var(--spacing-lg) auto 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.news-form-modern input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.news-form-modern input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.news-form-modern button {
+    background: white;
+    color: var(--discover-red);
+    border: none;
+    padding: 0 var(--spacing-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.news-form-modern button:hover {
+    background: var(--discover-midnight);
+    color: white;
+}
+
+/* Refreshing the Footer styles inside Discover Page to ensure they don't inherit overrides */
+.discover-page .footer {
+    background-color: var(--charcoal);
+    color: var(--white);
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+}
+
+.discover-page .footer-logo span {
+    color: var(--primary-orange);
+    /* Explicit original orange */
+}
+
+.discover-page .footer-link:hover,
+.discover-page .social-link:hover {
+    background-color: #FF6B35;
+    color: white;
+}
+
+/* ================================
+   RESPONSIVE ADJUSTMENTS
+================================ */
+@media (max-width: 1024px) {
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .discover-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .discover-hero-image {
+        clip-path: none;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        order: -1;
+    }
+
+    .picks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        grid-template-rows: auto;
+    }
+
+    .pick-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .pick-medium {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .picks-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+
+    .pick-large,
+    .pick-medium {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .pick-large {
+        grid-row: span 2;
+    }
+}
