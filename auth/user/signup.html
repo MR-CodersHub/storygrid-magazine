@@ -114,23 +114,43 @@
         .strength-strong {
             color: #28a745;
         }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper .form-control {
+            padding-right: 3rem;
+        }
+
+        .eye-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--medium-gray);
+            padding: 0;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        .eye-toggle:hover {
+            color: var(--primary-orange);
+        }
     </style>
 </head>
 
 <body>
     <div class="auth-container">
-        <a href="../../home-1.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                style="margin-right: 4px; vertical-align: middle;">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            Back to Home
-        </a>
-
         <div class="auth-card">
             <div class="auth-logo">
-                <h1>Story<span>Grid</span></h1>
+                <a href="../../index.html">
+                    <h1>Story<span>Grid</span></h1>
+                </a>
                 <p>Create your account to get started</p>
             </div>
 
@@ -147,15 +167,35 @@
 
                 <div class="form-group">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Create a strong password" required
-                        name="password" minlength="6" id="password" oninput="checkPasswordStrength()">
+                    <div class="password-wrapper">
+                        <input type="password" class="form-control" placeholder="Create a strong password" required
+                            name="password" minlength="6" id="password" oninput="checkPasswordStrength()">
+                        <button type="button" class="eye-toggle" onclick="togglePassword('password', 'eyeIcon1')"
+                            aria-label="Toggle password visibility">
+                            <svg id="eyeIcon1" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="password-strength" id="passwordStrength"></div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="Confirm your password" required
-                        name="confirmPassword" minlength="6">
+                    <div class="password-wrapper">
+                        <input type="password" class="form-control" placeholder="Confirm your password" required
+                            name="confirmPassword" minlength="6" id="confirmPassword">
+                        <button type="button" class="eye-toggle" onclick="togglePassword('confirmPassword', 'eyeIcon2')"
+                            aria-label="Toggle confirm password visibility">
+                            <svg id="eyeIcon2" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -182,6 +222,16 @@
     <!-- Scripts -->
     <script src="../../js/app.js"></script>
     <script>
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            const isHidden = input.type === 'password';
+            input.type = isHidden ? 'text' : 'password';
+            icon.innerHTML = isHidden
+                ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>'
+                : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+        }
+
         function checkPasswordStrength() {
             const password = document.getElementById('password').value;
             const strengthDiv = document.getElementById('passwordStrength');

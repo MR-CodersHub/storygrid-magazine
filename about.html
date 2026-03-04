@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,13 +20,6 @@
   <link rel="stylesheet" href="components.css">
 
   <style>
-    .about-hero {
-      background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%);
-      color: var(--white);
-      padding: var(--spacing-3xl) 0;
-      text-align: center;
-    }
-
     .mission-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -36,139 +29,177 @@
 
     .mission-image {
       position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
     }
 
     .mission-image img {
       width: 100%;
-      height: 500px;
+      height: 600px;
       object-fit: cover;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
+      transition: var(--transition-slow);
     }
 
-    .mission-image::before {
+    .mission-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .mission-image::after {
       content: '';
       position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 200px;
-      height: 200px;
-      background-color: var(--primary-orange);
-      z-index: -1;
-      border-radius: var(--radius-lg);
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      pointer-events: none;
     }
 
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacing-xl);
-      margin-top: var(--spacing-2xl);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-2xl);
+      margin-top: var(--spacing-3xl);
     }
 
     .value-card {
-      text-align: center;
-      padding: var(--spacing-xl);
+      text-align: left;
+      padding: var(--spacing-2xl);
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--off-white);
+      transition: var(--transition-base);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-orange-light);
     }
 
     .value-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
-      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      background: var(--primary-orange-soft);
+      border-radius: var(--radius-lg);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto var(--spacing-lg);
-      font-size: 2rem;
-      color: var(--white);
+      margin-bottom: var(--spacing-xl);
+      color: var(--primary-orange);
     }
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacing-xl);
-      margin-top: var(--spacing-2xl);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-2xl);
     }
 
     .team-member {
-      text-align: center;
       background: var(--white);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--off-white);
       transition: var(--transition-base);
+      text-align: center;
     }
 
     .team-member:hover {
       transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .team-photo-wrapper {
+      position: relative;
+      height: 350px;
+      overflow: hidden;
     }
 
     .team-photo {
       width: 100%;
-      height: 300px;
+      height: 100%;
       object-fit: cover;
+      transition: var(--transition-slow);
+    }
+
+    .team-member:hover .team-photo {
+      transform: scale(1.1);
     }
 
     .team-info {
-      padding: var(--spacing-lg);
+      padding: var(--spacing-xl);
     }
 
     .team-name {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      font-family: var(--font-heading);
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
     }
 
     .team-role {
       color: var(--primary-orange);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      margin-bottom: var(--spacing-sm);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--spacing-md);
     }
 
     .team-bio {
-      font-size: 0.875rem;
+      font-size: 0.95rem;
       color: var(--medium-gray);
       line-height: 1.6;
     }
 
     .stats-section {
-      background: var(--primary-orange);
+      background: var(--charcoal);
       color: var(--white);
       padding: var(--spacing-3xl) 0;
       text-align: center;
+      position: relative;
     }
 
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--spacing-2xl);
-      margin-top: var(--spacing-2xl);
+      gap: var(--spacing-3xl);
+    }
+
+    .stat-item {
+      padding: var(--spacing-xl);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .stat-number {
-      font-size: 3.5rem;
-      font-weight: 700;
+      font-size: 4rem;
+      font-weight: 800;
       font-family: var(--font-heading);
-      margin-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-xs);
+      background: linear-gradient(135deg, var(--white) 0%, var(--primary-orange) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .stat-label {
-      font-size: 1rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      opacity: 0.9;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.6);
     }
 
     @media (max-width: 992px) {
       .mission-section {
         grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
       }
 
-      .mission-image::before {
-        display: none;
+      .mission-image img {
+        height: 400px;
       }
     }
   </style>
@@ -186,7 +217,7 @@
       <!-- Nav Links (Center) -->
       <ul class="navbar-menu">
         <li><a href="index.html" class="navbar-link">Home</a></li>
-        <li><a href="discover.html" class="navbar-link">Discover</a></li>
+        <li><a href="discover.html" class="navbar-link">Home2</a></li>
         <li><a href="about.html" class="navbar-link active">About</a></li>
 
         <!-- Categories Dropdown -->
@@ -306,11 +337,11 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="about-hero">
+  <header class="page-hero">
     <div class="container">
       <span class="badge badge-orange">About Us</span>
-      <h1 style="margin-top: var(--spacing-md); color: var(--white);">Crafting Stories That Matter</h1>
-      <p style="max-width: 700px; margin: var(--spacing-lg) auto 0; font-size: 1.125rem; opacity: 0.9;">
+      <h1 class="page-hero-title">Crafting Stories That Matter</h1>
+      <p class="page-hero-text">
         We are a team of passionate storytellers, designers, and creators dedicated to delivering exceptional
         content and media services.
       </p>
@@ -351,12 +382,11 @@
   <!-- Values Section -->
   <section class="section bg-light">
     <div class="container">
-      <div class="text-center">
-        <span class="badge badge-orange">Our Values</span>
-        <h2 style="margin-top: var(--spacing-md);">What Drives Us</h2>
-        <p style="max-width: 600px; margin: var(--spacing-md) auto 0;">
-          These core values guide everything we do, from the stories we tell to the relationships we build.
-        </p>
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="badge badge-orange">Our Values</span>
+          <h2 class="section-title">What Drives Us</h2>
+        </div>
       </div>
 
       <div class="values-grid">
@@ -400,22 +430,6 @@
           <p>We embrace new ideas and technologies to push the boundaries of digital media and content
             creation.</p>
         </div>
-
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 11h1a3 3 0 0 1 0 6h-1"></path>
-              <path d="M9 12v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-6"></path>
-              <path d="M10 10V8a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"></path>
-              <path d="M10 7V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1"></path>
-              <path d="M10 14V13a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1"></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-          </div>
-          <h3>Collaboration</h3>
-          <p>We work closely with our clients and partners to achieve shared goals and create lasting impact.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -423,21 +437,20 @@
   <!-- Stats Section -->
   <section class="stats-section">
     <div class="container">
-      <h2 style="color: var(--white); margin-bottom: var(--spacing-md);">Our Impact in Numbers</h2>
       <div class="stats-grid">
-        <div>
+        <div class="stat-item">
           <div class="stat-number">500K+</div>
           <div class="stat-label">Monthly Readers</div>
         </div>
-        <div>
+        <div class="stat-item">
           <div class="stat-number">1,200+</div>
           <div class="stat-label">Published Articles</div>
         </div>
-        <div>
+        <div class="stat-item">
           <div class="stat-number">50+</div>
           <div class="stat-label">Expert Writers</div>
         </div>
-        <div>
+        <div class="stat-item">
           <div class="stat-number">98%</div>
           <div class="stat-label">Client Satisfaction</div>
         </div>
@@ -448,18 +461,19 @@
   <!-- Team Section -->
   <section class="section">
     <div class="container">
-      <div class="text-center">
-        <span class="badge badge-orange">Our Team</span>
-        <h2 style="margin-top: var(--spacing-md);">Meet the People Behind StoryGrid</h2>
-        <p style="max-width: 600px; margin: var(--spacing-md) auto 0;">
-          A diverse team of talented professionals passionate about storytelling and digital media.
-        </p>
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="badge badge-orange">Our Team</span>
+          <h2 class="section-title">Meet the People Behind StoryGrid</h2>
+        </div>
       </div>
 
       <div class="team-grid">
         <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600" alt="Team Member"
-            class="team-photo">
+          <div class="team-photo-wrapper">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600" alt="John Anderson"
+              class="team-photo">
+          </div>
           <div class="team-info">
             <div class="team-name">John Anderson</div>
             <div class="team-role">Editor-in-Chief</div>
@@ -468,30 +482,34 @@
         </div>
 
         <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" alt="Team Member"
-            class="team-photo">
+          <div class="team-photo-wrapper">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" alt="Sarah Mitchell"
+              class="team-photo">
+          </div>
           <div class="team-info">
             <div class="team-name">Sarah Mitchell</div>
             <div class="team-role">Creative Director</div>
-            <p class="team-bio">Award-winning designer specializing in brand identity and visual
-              storytelling.</p>
+            <p class="team-bio">Award-winning designer specializing in brand identity and visual storytelling.</p>
           </div>
         </div>
 
         <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600" alt="Team Member"
-            class="team-photo">
+          <div class="team-photo-wrapper">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600" alt="Michael Chen"
+              class="team-photo">
+          </div>
           <div class="team-info">
             <div class="team-name">Michael Chen</div>
             <div class="team-role">Lead Developer</div>
-            <p class="team-bio">Full-stack developer passionate about creating seamless digital experiences.
-            </p>
+            <p class="team-bio">Full-stack developer passionate about creating seamless digital experiences.</p>
           </div>
         </div>
 
         <div class="team-member">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600" alt="Team Member"
-            class="team-photo">
+          <div class="team-photo-wrapper">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600" alt="Emily Rodriguez"
+              class="team-photo">
+          </div>
           <div class="team-info">
             <div class="team-name">Emily Rodriguez</div>
             <div class="team-role">Content Strategist</div>
@@ -503,18 +521,19 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="section"
-    style="background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%); color: var(--white); text-align: center;">
+  <section class="newsletter-section">
     <div class="container">
-      <h2 style="color: var(--white);">Ready to Tell Your Story?</h2>
-      <p style="max-width: 600px; margin: var(--spacing-lg) auto; font-size: 1.125rem; opacity: 0.9;">
-        Let's work together to create content that resonates with your audience and drives real results.
-      </p>
-      <div
-        style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-xl);">
-        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
-        <a href="services.html" class="btn btn-outline btn-lg"
-          style="border-color: var(--white); color: var(--white);">View Services</a>
+      <div class="newsletter-card">
+        <h2 style="color: var(--white); font-size: 3rem; margin-bottom: var(--spacing-md);">Ready to Tell Your Story?
+        </h2>
+        <p style="color: rgba(255, 255, 255, 0.82); font-size: 1.25rem; margin-bottom: var(--spacing-xl);">
+          From deep-dive features to visual storytelling, let's create something that resonates.
+        </p>
+        <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+          <a href="featured.html" class="btn btn-outline btn-lg"
+            style="color: var(--white); border-color: var(--white);">Explore Work</a>
+        </div>
       </div>
     </div>
   </section>
@@ -589,7 +608,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 DESIGNED BY MR CODERS HUB. ALL RIGHTS RESERVED.</p>
+        <p class="footer-copyright">&copy; 2026 StoryGrid Magazine. All rights reserved.</p>
       </div>
     </div>
   </footer>

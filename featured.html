@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
       <!-- Nav Links (Center) -->
       <ul class="navbar-menu">
         <li><a href="index.html" class="navbar-link">Home</a></li>
-        <li><a href="discover.html" class="navbar-link">Discover</a></li>
+        <li><a href="discover.html" class="navbar-link">Home2</a></li>
         <li><a href="about.html" class="navbar-link">About</a></li>
 
         <!-- Categories Dropdown -->
@@ -152,156 +152,154 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="section"
-    style="background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%); color: var(--white); text-align: center; padding: var(--spacing-3xl) 0;">
+  <header class="page-hero">
     <div class="container">
       <span class="badge badge-orange">Editor's Choice</span>
-      <h1 style="color: var(--white); margin-top: var(--spacing-md);">Featured Articles</h1>
-      <p style="max-width: 600px; margin: var(--spacing-lg) auto 0; font-size: 1.125rem; opacity: 0.9;">
-        Hand-picked stories that define the cultural conversation
+      <h1 class="page-hero-title">Featured Articles</h1>
+      <p class="page-hero-text">
+        Hand-picked stories that define the cultural conversation, exploring the intersection of design, technology,
+        and human experience.
       </p>
     </div>
-  </section>
+  </header>
 
   <!-- Featured Articles Grid -->
   <section class="section">
     <div class="container">
       <div class="grid-3">
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Quantum Computing"
-            class="card-img">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Quantum Computing"
+              class="card-img">
+          </div>
           <div class="card-body">
-            <span class="badge badge-orange">Technology</span>
+            <span class="badge-mini">Technology</span>
             <h3 class="card-title">The Silent Revolution of Quantum Computing</h3>
-            <p class="card-text">How quantum processors are reshaping the future of computation and solving
-              previously impossible problems.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">12 min read</span>
-              <a href="article1.html" class="btn btn-outline btn-sm">Read More</a>
+            <p class="card-text">How quantum processors are reshaping the future of computation and solving previously
+              impossible problems.</p>
+            <div class="card-footer">
+              <span class="card-meta">12 min read</span>
+              <a href="article1.html" class="card-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800" alt="Design" class="card-img">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800" alt="Design" class="card-img">
+          </div>
           <div class="card-body">
-            <span class="badge badge-orange">Design</span>
+            <span class="badge-mini">Design</span>
             <h3 class="card-title">Minimalism is Dead. Long Live the New Maximalism</h3>
-            <p class="card-text">After a decade of stark minimalism, designers are embracing bold colors and
-              expressive typography.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">10 min read</span>
-              <a href="article2.html" class="btn btn-outline btn-sm">Read More</a>
+            <p class="card-text">After a decade of stark minimalism, designers are embracing bold colors and expressive
+              typography.</p>
+            <div class="card-footer">
+              <span class="card-meta">10 min read</span>
+              <a href="article2.html" class="card-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Scottish Highlands"
-            class="card-img">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Scottish Highlands"
+              class="card-img">
+          </div>
           <div class="card-body">
-            <span class="badge badge-orange">Travel</span>
+            <span class="badge-mini">Travel</span>
             <h3 class="card-title">Rewilding the Scottish Highlands</h3>
-            <p class="card-text">A photographic journey into the restoration of Scotland's ancient
-              ecosystems.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">15 min read</span>
-              <a href="article3.html" class="btn btn-outline btn-sm">Read More</a>
+            <p class="card-text">A photographic journey into the restoration of Scotland's ancient ecosystems and
+              natural heritage.</p>
+            <div class="card-footer">
+              <span class="card-meta">15 min read</span>
+              <a href="article3.html" class="card-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Business" class="card-img">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Business"
+              class="card-img">
+          </div>
           <div class="card-body">
-            <span class="badge badge-orange">Business</span>
+            <span class="badge-mini">Business</span>
             <h3 class="card-title">The Art of Stillness in a Hyper-Connected Era</h3>
-            <p class="card-text">Business leaders are discovering the counterintuitive power of strategic
-              stillness.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">8 min read</span>
-              <a href="article3.html" class="btn btn-outline btn-sm">Read More</a>
+            <p class="card-text">Business leaders are discovering the counterintuitive power of strategic stillness and
+              deep focus.</p>
+            <div class="card-footer">
+              <span class="card-meta">8 min read</span>
+              <a href="article3.html" class="card-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800" alt="Film Photography"
-            class="card-img">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800" alt="Film Photography"
+              class="card-img">
+          </div>
           <div class="card-body">
-            <span class="badge badge-orange">Culture</span>
+            <span class="badge-mini">Culture</span>
             <h3 class="card-title">Why Gen Z is Buying Film Cameras in 2026</h3>
-            <p class="card-text">Young photographers are rediscovering the deliberate art of analog
+            <p class="card-text">Young photographers are rediscovering the deliberate art and tactile pleasure of analog
               photography.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">9 min read</span>
-              <a href="article2.html" class="btn btn-outline btn-sm">Read More</a>
+            <div class="card-footer">
+              <span class="card-meta">9 min read</span>
+              <a href="article2.html" class="card-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800" alt="Reading" class="card-img">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800" alt="Reading"
+              class="card-img">
+          </div>
           <div class="card-body">
-            <span class="badge badge-orange">Health</span>
+            <span class="badge-mini">Health</span>
             <h3 class="card-title">The Neural Benefits of Deep-Focus Reading</h3>
-            <p class="card-text">Neuroscience reveals that sustained reading rewires our brains for better
-              focus and empathy.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">11 min read</span>
-              <a href="article1.html" class="btn btn-outline btn-sm">Read More</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800" alt="Architecture"
-            class="card-img">
-          <div class="card-body">
-            <span class="badge badge-orange">Design</span>
-            <h3 class="card-title">The Brutalist Revival</h3>
-            <p class="card-text">Why concrete is reclaiming the city skyline in modern urban planning.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">7 min read</span>
-              <a href="article1.html" class="btn btn-outline btn-sm">Read More</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Startup" class="card-img">
-          <div class="card-body">
-            <span class="badge badge-orange">Business</span>
-            <h3 class="card-title">The Rise of Micro-SaaS</h3>
-            <p class="card-text">How solo founders are building profitable software businesses from scratch.
-            </p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">10 min read</span>
-              <a href="article3.html" class="btn btn-outline btn-sm">Read More</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800" alt="Mountains"
-            class="card-img">
-          <div class="card-body">
-            <span class="badge badge-orange">Travel</span>
-            <h3 class="card-title">Sustainable Tourism in 2026</h3>
-            <p class="card-text">How travelers are prioritizing environmental responsibility in their
-              journeys.</p>
-            <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-md);">
-              <span style="font-size: 0.875rem; color: var(--medium-gray);">9 min read</span>
-              <a href="article3.html" class="btn btn-outline btn-sm">Read More</a>
+            <p class="card-text">Neuroscience reveals that sustained reading rewires our brains for better focus,
+              empathy, and complexity.</p>
+            <div class="card-footer">
+              <span class="card-meta">11 min read</span>
+              <a href="article1.html" class="card-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </article>
@@ -379,7 +377,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 DESIGNED BY MR CODERS HUB. ALL RIGHTS RESERVED.</p>
+        <p class="footer-copyright">&copy; 2026 StoryGrid Magazine. All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -4,12 +4,13 @@
 ================================ */
 
 :root {
-    /* Primary Colors from Reference Image */
+    /* Primary Colors - Vibrant Orange Edition */
     --primary-orange: #FF6B35;
     --primary-orange-dark: #E85A2A;
     --primary-orange-light: #FF8C61;
+    --primary-orange-soft: rgba(255, 107, 53, 0.1);
 
-    /* Neutrals */
+    /* Neutrals - Sophisticated Palette */
     --white: #FFFFFF;
     --off-white: #F8F9FA;
     --light-gray: #E9ECEF;
@@ -18,37 +19,41 @@
     --charcoal: #1A1A1A;
     --black: #000000;
 
-    /* Accent Colors */
-    --accent-gold: #FFA500;
+    /* Glassmorphism Tokens */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-heading: 'Playfair Display', Georgia, serif;
 
-    /* Spacing System */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-2xl: 4rem;
-    --spacing-3xl: 6rem;
+    /* Spacing System - Generous and Balanced */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3.5rem;   /* 56px */
+    --spacing-2xl: 5rem;    /* 80px */
+    --spacing-3xl: 7.5rem;  /* 120px */
 
     /* Border Radius */
     --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-pill: 9999px;
 
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
+    /* Shadows - Layered and Subtle */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12);
 
     /* Transitions */
-    --transition-fast: 0.2s ease;
-    --transition-base: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ================================
